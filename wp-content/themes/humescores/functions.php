@@ -139,11 +139,17 @@ add_action( 'widgets_init', 'humescores_widgets_init' );
  */
 function humescores_scripts() {
     // Enqueue Google Fonts: Source Pro and PT Serif -variables-site/_typography.scss and typography/typography.scss
-        wp_enqueue_style( 'humescores-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600,900' );
+    wp_enqueue_style( 'humescores-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600,900' );
     
 	wp_enqueue_style( 'humescores-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'humescores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+    //	bootstrap css and js
+	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri(). '/bootstrap/css/bootstrap.min.css');
+
+    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri(). '/bootstrap/js/bootstrap.min.js', array('jquery'), '20170804', true);
+    //
+
+//    wp_enqueue_script( 'humescores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'humescores-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
